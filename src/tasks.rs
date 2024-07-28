@@ -3,18 +3,18 @@ use std::io;
 use chrono::{NaiveDateTime, Utc};
 
 pub enum Status {
-    Completed,  // Completed task
-    Failed,     // Tasks that failed to be completed (not working on it)
-    InProgress, // Tasks that are in progress
+//    Completed,  // Completed task
+//    Failed,     // Tasks that failed to be completed (not working on it)
+//    InProgress, // Tasks that are in progress
     Todo,       // Tasks that haven't started yet
 }
 
 impl fmt::Display for Status {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
-            Status::Completed => write!(f, "Completed"),
-            Status::Failed => write!(f, "Failed"),
-            Status::InProgress => write!(f, "In Progress"),
+ //           Status::Completed => write!(f, "Completed"),
+ //           Status::Failed => write!(f, "Failed"),
+ //           Status::InProgress => write!(f, "In Progress"),
             Status::Todo => write!(f, "To-do"),
         }
     }
@@ -56,12 +56,12 @@ impl Task {
 
 
         Ok(Self {
-            id: id,
-            name: name,
-            description: description,
-            category: category,
-            creation_date: creation_date,
-            status: status,
+            id,
+            name,
+            description,
+            category,
+            creation_date,
+            status,
         }
     )
     }
@@ -93,8 +93,8 @@ impl Task {
     /// Prints information about task
     pub fn print(&self) {
         println!(
-            "Task: {} | Category: {} | Description: {} | Date: {} | Status: {}",
-            self.name, self.category, self.description, self.creation_date, self.status
+            "Id: {} | Task: {} | Category: {} | Description: {} | Date: {} | Status: {}",
+            self.id, self.name, self.category, self.description, self.creation_date, self.status
         )
     }
 
